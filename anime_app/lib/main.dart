@@ -10,6 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(title: 'Anime App', home: HomeView());
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Anime App',
+        home: HomeView());
   }
 }
