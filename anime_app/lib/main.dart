@@ -1,4 +1,5 @@
-import 'package:anime_app/Features/Home/presentation/views/home_view.dart';
+import 'package:anime_app/Features/Home/presentation/screens/details_screen.dart';
+import 'package:anime_app/Features/Home/presentation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,6 +14,6 @@ class MyApp extends StatelessWidget {
     return const MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Anime App',
-        home: HomeView());
+        home: DetailsScreen());
   }
 }
