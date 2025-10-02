@@ -1,3 +1,4 @@
+import 'package:anime_app/Features/upgrade_plan/presentation/upgrade_plan_screen.dart';
 import 'package:flutter/material.dart';
 
 class CustomDetailsNavigationBar extends StatefulWidget {
@@ -40,24 +41,34 @@ class _CustomNavigationBarState extends State<CustomDetailsNavigationBar> {
                     : const Color(0xFF464061),
                 borderRadius: BorderRadius.circular(25),
               ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    items[index]["icon"],
-                    color: Colors.white,
-                    height: 22,
-                  ),
-                  const SizedBox(width: 6),
-                  Text(
-                    items[index]["label"],
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      fontFamily: 'Raleway',
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const UpgradePlanScreen(),
                     ),
-                  ),
-                ],
+                  );
+                },
+                child: Row(
+                  children: [
+                    Image.asset(
+                      items[index]["icon"],
+                      color: Colors.white,
+                      height: 22,
+                    ),
+                    const SizedBox(width: 6),
+                    Text(
+                      items[index]["label"],
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 15,
+                        fontWeight: FontWeight.w600,
+                        fontFamily: 'Raleway',
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ),
           );
