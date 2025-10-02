@@ -48,7 +48,6 @@ class CustomSeriesDetails extends StatelessWidget {
             );
           }),
         ),
-        SizedBox(height: 300),
       ],
     );
   }

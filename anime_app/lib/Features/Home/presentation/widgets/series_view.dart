@@ -1,3 +1,4 @@
+import 'package:anime_app/Features/Home/presentation/screens/details_screen.dart';
 import 'package:flutter/material.dart';
 
 class SeriesView extends StatelessWidget {
@@ -31,46 +32,56 @@ class SeriesView extends StatelessWidget {
             padding: const EdgeInsets.only(right: 14, top: 20),
             child: Column(
               children: [
-                Stack(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(16),
-                      child: Image.asset(
-                        width: 184,
-                        height: 245,
-                        "assets/images/${series.keys.elementAt(index)}",
-                        fit: BoxFit.fill,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const DetailsScreen(),
                       ),
-                    ),
-                    Positioned(
-                      top: 8,
-                      right: 8,
-                      child: Container(
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(6),
-                            color: Colors.white,
-                          ),
-                          padding: const EdgeInsets.symmetric(horizontal: 6),
-                          child: Row(
-                            children: [
-                              const Icon(
-                                Icons.star,
-                                color: Color(0xff5436F8),
-                                size: 16,
-                              ),
-                              Text(
-                                series.values.elementAt(index)[2],
-                                style: const TextStyle(
-                                  fontSize: 12,
-                                  fontFamily: 'Raleway',
-                                  fontWeight: FontWeight.w600,
-                                  color: Color(0xff1E1E1E),
+                    );
+                  },
+                  child: Stack(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(16),
+                        child: Image.asset(
+                          width: 184,
+                          height: 245,
+                          "assets/images/${series.keys.elementAt(index)}",
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                      Positioned(
+                        top: 8,
+                        right: 8,
+                        child: Container(
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(6),
+                              color: Colors.white,
+                            ),
+                            padding: const EdgeInsets.symmetric(horizontal: 6),
+                            child: Row(
+                              children: [
+                                const Icon(
+                                  Icons.star,
+                                  color: Color(0xff5436F8),
+                                  size: 16,
                                 ),
-                              )
-                            ],
-                          )),
-                    )
-                  ],
+                                Text(
+                                  series.values.elementAt(index)[2],
+                                  style: const TextStyle(
+                                    fontSize: 12,
+                                    fontFamily: 'Raleway',
+                                    fontWeight: FontWeight.w600,
+                                    color: Color(0xff1E1E1E),
+                                  ),
+                                )
+                              ],
+                            )),
+                      )
+                    ],
+                  ),
                 ),
                 Text(
                   series.values.elementAt(index)[0],
